@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,height=device-height, user-scalable=no,initial-scale=1, minimum-scale=1, maximum-scale=1">  
+	<title>Document</title>
+	<script type="text/javascript" src='scripts/setFontsize.js'></script>
+	<link rel="stylesheet" type="text/css" href="hh_style/reset.css">
+	<link rel="stylesheet" type="text/css" href="hh_style/index.css">
+	<link rel="stylesheet" type="text/css" href="hh_style/hh-header.css">
+	<link rel="stylesheet" type="text/css" href="hh_style/gotop.css">
+</head>
+<body>
+
+
+	<div class="gotop" id='gotop'>
+		<span>阴影</span>
+		<img src='images/gotop.png'>
+	</div>
+
+	<header class="hh-header">
+		<div class="hh-group left-group">
+			<a href="#">
+				<span>返回</span>
+				<i><img src='images/header-back.png'></i>
+			</a>
+		</div>
+		<h1>
+			<span>海航科技</span>
+			<a href="#">
+				<img src='images/logo.png'>
+			</a>
+		</h1>
+		<div class="hh-group right-group">
+			<a href="#">
+				<span>菜单</span>
+				<i><img src='images/header-menu.png'></i>
+			</a>
+		</div>
+	</header>
+	
+	<div class="hh-main">
+		
+		<div class="guimo" id='scale'>
+			<div class="guimo_in guimo_one">
+				<div class="hanzi guimo_tou guimo_touzi">投资规模<small>&nbsp;(亿元)</small></div>
+				<div class="tou_qian touzi_num">--.--</div>
+				<div class="hanzi pay_leiji">累计付款<small>&nbsp;(亿元)</small></div>
+				<div class="pay_qian pay_num">--.--<small>亿</small></div>
+			</div>
+			<div class="guimo_in guimo_two">
+				<div class="hanzi  guimo_tou guimo_rongzi">融资金额<small>&nbsp;(亿元)</small></div>
+				<div class="tou_qian rongzi_num">--.--</div>
+				<div class="hanzi pay_leiji">融资成本<small>&nbsp;(亿元)</small></div>
+				<div class="pay_qian rongzi_chengben">--.--<small>亿</small></div>
+			</div>
+			<!-- <script type=text/template id='scale_tpl'>
+				<div class="guimo_in guimo_one">
+					<div class="hanzi guimo_tou guimo_touzi">投资规模<small>&nbsp;(亿元)</small></div>
+					<div class="tou_qian touzi_num"><%= indexData.invest_scale %></div>
+					<div class="hanzi pay_leiji">累计付款<small>&nbsp;(亿元)</small></div>
+					<div class="pay_qian pay_num"><%= indexData.cumulative_money %><small>亿</small></div>
+				</div>
+				<div class="guimo_in guimo_two">
+					<div class="hanzi  guimo_tou guimo_rongzi">融资金额<small>&nbsp;(亿元)</small></div>
+					<div class="tou_qian rongzi_num"><%= indexData.financing_money %></div>
+					<div class="hanzi pay_leiji">融资成本<small>&nbsp;(亿元)</small></div>
+					<div class="pay_qian rongzi_chengben"><%= indexData.financing_cost %><small>亿</small></div>
+				</div>
+			</script> -->
+		</div>
+		
+		<div class="biao-border-gradient">
+			<div class="biao">
+				<div class="biao_in shouru">
+					<p class="money shouru_num">---</p>
+					<p class='biao_hanzi'>标的收入</p>
+					<p class='smal'>(亿元)</p>
+				</div>
+				<div class="biao_in lirun">
+					<p class="money lirun_num">---</p>
+					<p class='biao_hanzi'>标的净利润</p>
+					<p class='smal'>(亿元)</p>
+				</div>
+				<div class="biao_in guzhi">
+					<p class="money guzhi_num">---</p>
+					<p class='biao_hanzi'>企业估值</p>
+					<p class='smal'>(亿元)</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="important-project">
+			<div class="project-tit">
+				<!-- <h3 class='title'><span class='dot'>&nbsp;·&nbsp;</span>重点投资项目<span class='dot'>&nbsp;·&nbsp;</span></h3> -->
+				<fieldset>
+					<legend><span>·</span><span class='letit'>重点投资项目</span><span>·</span></legend>
+				</fieldset>
+			</div>
+			<div class="project-list" id='project-list'>
+			<a href="./detail.html?id=<%= indexData.list[indexI].id %>" class="project-item">
+						<h2 class="item-tit">
+							<span class='xiangmu'><%= indexData.list[indexI].project_name %></span>
+							<span class='name'><i><img src='images/project-item-head.png'></i>&nbsp;<%= indexData.list[indexI].project_manager %></span>
+						</h2>
+						<div class="item-content">
+							<ul class="item-content-list">
+								<li>
+									<p class='p-one'>
+										<i><img src='images/same-department.png'></i><span class='smal-one'>&nbsp;合作方</span>
+									</p>
+									<p class='p-two'><%= indexData.list[indexI].partner %></p>
+								</li>
+								<li>
+									<p class='p-one'>
+										<i><img src='images/other.png'></i><span class='smal-two'>&nbsp;行业</span>
+									</p>
+									<p class='p-two'><%= indexData.list[indexI].project_industry %></p>
+								</li>
+								<li>
+									<p class='p-one'>
+										<i><img src='images/sha-box.png'></i><span class='smal-three'>&nbsp;持股比例</span>
+									</p>
+									<p class='p-two'><%= indexData.list[indexI].shareholding_ratio %>%</p>
+								</li>
+								<li>
+									<p class='p-one'>
+										<i><img src='images/wait.png'></i><span class='smal-four'>&nbsp;当前阶段</span>
+									</p>
+									<p class='p-two'><%= indexData.list[indexI].progress_status_title %></p>
+								</li>
+							</ul>
+							<div class="latest-progress">
+								<h4>最新进展</h4>
+								<p class="progress-content">
+									<%= indexData.list[indexI].newProgress %>
+								</p>
+								<div class="more"><img src="images/arrow-right.png"></div>
+							</div>
+						</div>
+					</a>
+				<script type=text/template id='project-item-tpl'>
+					<% for(var indexI=0;indexI<indexData.list.length;indexI++){ %>
+					<a href="./detail.html?id=<%= indexData.list[indexI].id %>" class="project-item">
+						<h2 class="item-tit">
+							<span class='xiangmu'><%= indexData.list[indexI].project_name %></span>
+							<span class='name'><i><img src='images/project-item-head.png'></i>&nbsp;<%= indexData.list[indexI].project_manager %></span>
+						</h2>
+						<div class="item-content">
+							<ul class="item-content-list">
+								<li>
+									<p class='p-one'>
+										<i><img src='images/same-department.png'></i><span class='smal-one'>&nbsp;合作方</span>
+									</p>
+									<p class='p-two'><%= indexData.list[indexI].partner %></p>
+								</li>
+								<li>
+									<p class='p-one'>
+										<i><img src='images/other.png'></i><span class='smal-two'>&nbsp;行业</span>
+									</p>
+									<p class='p-two'><%= indexData.list[indexI].project_industry %></p>
+								</li>
+								<li>
+									<p class='p-one'>
+										<i><img src='images/sha-box.png'></i><span class='smal-three'>&nbsp;持股比例</span>
+									</p>
+									<p class='p-two'><%= indexData.list[indexI].shareholding_ratio %>%</p>
+								</li>
+								<li>
+									<p class='p-one'>
+										<i><img src='images/wait.png'></i><span class='smal-four'>&nbsp;当前阶段</span>
+									</p>
+									<p class='p-two'><%= indexData.list[indexI].progress_status_title %></p>
+								</li>
+								
+							</ul>
+							<div class="latest-progress">
+								<h4>最新进展</h4>
+								<p class="progress-content">
+									<%= indexData.list[indexI].newProgress %>
+								</p>
+								<div class="more"><img src="images/arrow-right.png"></div>
+							</div>
+						</div>
+					</a>
+					<% } %>
+				</script>
+			</div>
+		</div>
+
+	</div>
+
+	<script type="text/javascript" src='scripts/jquery.js'></script>
+	<script type="text/javascript" src='scripts/underscore.js'></script>
+	<script type="text/javascript" src='scripts/common.js'></script>
+	<script type="text/javascript" src='scripts/index.js'></script>
+	<script type="text/javascript" src='scripts/gotop.js'></script>
+
+</body>
+</html>
